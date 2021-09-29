@@ -13,10 +13,14 @@ def load_config(config_path):
     return EasyDict(f_config)
 
 
-def update_the_main_config(config_path, r_config):
-    # type: (str | Path, EasyDict) -> None
+def update_the_main_config(config_path, r_config=None):
+    # type: (str | Path, EasyDict) -> EasyDict
     """
     updates r_config with the path given
     """
+    if r_config is None:
+        r_config = EasyDict()
+
     cf = load_config(config_path)
     r_config.update(cf)
+    return r_config

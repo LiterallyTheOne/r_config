@@ -1,5 +1,7 @@
-
+/build/
 /.idea/
+/dist/
+/r_config_loader.egg-info/
 
 __pycache__
 # Project exclude paths
