@@ -1,13 +1,12 @@
 import pytest
-from easydict import EasyDict
 
-from r_config_loader.r_config_loader import update_the_main_config
+from r_config_loader.r_config_loader import RConfig, update_the_main_config
 
 
 @pytest.fixture()
 def r_config():
-    # type: () -> EasyDict
-    return EasyDict()
+    # type: () -> RConfig
+    return RConfig()
 
 
 @pytest.fixture()
