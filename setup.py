@@ -5,8 +5,8 @@ setup(
     version="0.2.0",
     packages=['r_config_loader'],
     author="Ramin Zarebidoky",
-    author_email="mystery.ramin@gmail.com",
-    description="using easydict and Yaml to make loading and using config easier",
+    author_email="ramin.zarebidoky@gmail.com",
+    description="Standard way that I am using to use config",
     url="https://github.com/literallynomana/r_config_loader",
     long_description="using easydict and PyYaml to make loading config easier",
     install_requires=['pyyaml', 'easydict']
