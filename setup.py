@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='r_config_loader',
-    version="0.2.0",
+    version="0.2.1",
     packages=['r_config_loader'],
     author="Ramin Zarebidoky",
     author_email="ramin.zarebidoky@gmail.com",
