@@ -1,6 +1,6 @@
 import pytest
 
-from r_config_loader.r_config_loader import RConfig
+from r_config.r_config import RConfig
 
 
 @pytest.fixture()
