@@ -1,4 +1,4 @@
-# r_config_loader
+# r_config
 
 Standard way that I am using to use config
 
@@ -7,7 +7,7 @@ Standard way that I am using to use config
 #### from str:
 
 ```python
-from r_config.r_config import RConfig
+from r_config import RConfig
 
 r_config = RConfig()
 
@@ -29,7 +29,7 @@ r_config.update_from_str(str_yaml)
 #### from file:
 
 ```python
-from r_config.r_config import RConfig
+from r_config import RConfig
 from pathlib import Path
 
 r_config = RConfig()
