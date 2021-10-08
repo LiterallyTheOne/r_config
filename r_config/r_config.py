@@ -12,7 +12,7 @@ class RConfig(dict):
         self.update(self)
 
     def update(self, r=None, **kwargs):
-        # type: (RConfig, dict[str,Any]) -> None
+        # type: (RConfig | dict, dict[str,Any]) -> None
 
         d = {}
         d.update(kwargs)
