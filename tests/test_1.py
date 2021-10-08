@@ -27,7 +27,7 @@ def yaml_str():
 
 
 @pytest.fixture()
-def r_dic():
+def r_dict():
     # type: () -> dict[str,Any]
 
     return {'a': 10, 'b': 'salam', 'f': {'p': 2, 'q': 3}}
@@ -39,16 +39,16 @@ def test_update_the_main_config(rc, yaml_str):
     assert hasattr(rc, 'yek')
 
 
-def test_from_dic(r_dic):
-    rc = RConfig(r_dic)
+def test_from_dic(r_dict):
+    rc = RConfig(r_dict)
     assert hasattr(rc, 'a')
 
 
-def test_inner_dictionaries(r_dic):
-    rc = RConfig(r_dic)
+def test_inner_dictionaries(r_dict):
+    rc = RConfig(r_dict)
     assert isinstance(rc.f, RConfig)
 
 
-def test_update_with_dictionary(rc, r_dic):
-    rc.update(r_dic)
+def test_update_with_dictionary(rc, r_dict):
+    rc.update(r_dict)
     assert hasattr(rc, 'a')
