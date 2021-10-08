@@ -9,7 +9,7 @@ Standard way that I am using to use config
 ```python
 from r_config import RConfig
 
-r_config = RConfig()
+rc = RConfig()
 
 str_yaml = """
     yek:
@@ -22,7 +22,7 @@ str_yaml = """
       f1: 'khodafez'
 """
 
-r_config.update_from_str(str_yaml)
+rc.update_from_str(str_yaml)
 
 ```
 
@@ -32,10 +32,10 @@ r_config.update_from_str(str_yaml)
 from r_config import RConfig
 from pathlib import Path
 
-r_config = RConfig()
+rc = RConfig()
 
 path = Path('/path/to/config.yaml')
 
-r_config.update_from_file(path)
+rc.update_from_file(path)
 
 ```
