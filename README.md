@@ -39,3 +39,14 @@ path = Path('/path/to/config.yaml')
 rc.update_from_file(path)
 
 ```
+
+#### from dict:
+
+```python
+from r_config import RConfig
+
+r_dict = {'a': 10, 'b': 'salam', 'f': {'p': 2, 'q': 3}}
+
+rc = RConfig(r_dict)
+
+```
