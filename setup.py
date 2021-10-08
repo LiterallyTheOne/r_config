@@ -5,7 +5,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='r_config',
-    version="0.4.0",
+    version="0.4.1",
     packages=['r_config'],
     author="Ramin Zarebidoky",
     author_email="ramin.zarebidoky@gmail.com",
