@@ -9,7 +9,7 @@ setup(
     packages=['r_config'],
     author="Ramin Zarebidoky",
     author_email="ramin.zarebidoky@gmail.com",
-    description="Standard way that I am using to use config",
+    description="a customized way to use config",
     url="https://github.com/RaminZarebidoky/r_config",
     long_description=long_description,
     long_description_content_type="text/markdown",

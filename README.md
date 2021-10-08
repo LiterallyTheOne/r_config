@@ -1,6 +1,6 @@
 # r_config
 
-Standard way that I am using to use config
+a customized way to use config
 
 ## usage:
 
