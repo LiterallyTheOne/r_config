@@ -1,12 +1,42 @@
 import yaml
-from easydict import EasyDict
 from pathlib import Path
 
+from typing import Any
 
-class RConfig(EasyDict):
+
+class RConfig(dict):
 
     def __init__(self, *args, **kwargs):
+        # type: (tuple[Any], dict[str, Any]) -> None
         super().__init__(*args, **kwargs)
+        self.update(self)
+
+    def update(self, r=None, **kwargs):
+        # type: (RConfig, dict[str,Any]) -> None
+
+        d = {}
+        d.update(kwargs)
+
+        if r is None:
+            r = self.__class__()
+
+        for key, value in r.items():
+            setattr(self, key, value)
+
+        for key, value in d:
+            setattr(self, key, value)
+
+    def __setattr__(self, key, value):
+
+        if isinstance(value, (list, tuple)):
+            value = [self.__class__(x) if isinstance(x, dict) else x for x in value]
+        elif isinstance(value, dict):
+            value = self.__class__(value)
+
+        super().__setattr__(key, value)
+        super().__setitem__(key, value)
+
+    __setitem__ = __setattr__
 
     def update_from_file(self, config_path):
         # type: (str | Path) -> None
