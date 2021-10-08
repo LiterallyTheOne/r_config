@@ -5,7 +5,7 @@ from typing import Any
 
 
 @pytest.fixture()
-def r_config():
+def rc():
     # type: () -> RConfig
     return RConfig()
 
@@ -33,17 +33,22 @@ def r_dic():
     return {'a': 10, 'b': 'salam', 'f': {'p': 2, 'q': 3}}
 
 
-def test_update_the_main_config(r_config, yaml_str):
-    r_config.update_from_str(yaml_str)
+def test_update_the_main_config(rc, yaml_str):
+    rc.update_from_str(yaml_str)
 
-    assert hasattr(r_config, 'yek')
+    assert hasattr(rc, 'yek')
 
 
 def test_from_dic(r_dic):
-    r = RConfig(r_dic)
-    assert hasattr(r, 'a')
+    rc = RConfig(r_dic)
+    assert hasattr(rc, 'a')
 
 
 def test_inner_dictionaries(r_dic):
-    r = RConfig(r_dic)
-    assert isinstance(r.f, RConfig)
+    rc = RConfig(r_dic)
+    assert isinstance(rc.f, RConfig)
+
+
+def test_update_with_dictionary(rc, r_dic):
+    rc.update(r_dic)
+    assert hasattr(rc, 'a')
