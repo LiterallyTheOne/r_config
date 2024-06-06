@@ -6,4 +6,4 @@ API
     :recursive:
 
 
-    r_config
+    r_config.RConfig
