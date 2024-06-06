@@ -1,18 +1,23 @@
+from __future__ import annotations
 import yaml
 from pathlib import Path
 
-from typing import Any
+from typing import Any, Self
 
 
 class RConfig(dict):
 
-    def __init__(self, *args, **kwargs):
-        # type: (tuple[Any], dict[str, Any]) -> None
+    def __init__(
+            self,
+            *args: tuple[Any],
+            **kwargs: dict[str, Any]) -> None:
         super().__init__(*args, **kwargs)
         self.update(self)
 
-    def update(self, r=None, **kwargs):
-        # type: (RConfig | dict, dict[str,Any]) -> None
+    def update(
+            self,
+            r: Self | dict = None,
+            **kwargs: dict[str, any]) -> None:
 
         d = {}
         d.update(kwargs)
@@ -26,7 +31,10 @@ class RConfig(dict):
         for key, value in d:
             setattr(self, key, value)
 
-    def __setattr__(self, key, value):
+    def __setattr__(
+            self,
+            key: str,
+            value: Any):
 
         if isinstance(value, (list, tuple)):
             value = [self.__class__(x) if isinstance(x, dict) else x for x in value]
@@ -38,8 +46,9 @@ class RConfig(dict):
 
     __setitem__ = __setattr__
 
-    def update_from_file(self, config_path):
-        # type: (str | Path) -> None
+    def update_from_file(
+            self,
+            config_path: str | Path) -> None:
         """
         updates r_config with a given path
         :param config_path:
@@ -49,8 +58,9 @@ class RConfig(dict):
 
         self.update_from_str(str_yaml)
 
-    def update_from_str(self, str_yaml):
-        # type: (str) -> None
+    def update_from_str(
+            self,
+            str_yaml: str) -> None:
         """
         updates r_config a with given RConfig
         :param str_yaml: yaml based string
@@ -62,8 +72,8 @@ class RConfig(dict):
         self.update(cf)
 
     @staticmethod
-    def _load_config(config_path):
-        # type: (str | Path) -> str
+    def _load_config(
+            config_path: str | Path) -> str:
         """
         loads a yaml based config file as string
         :param config_path: path of config file
@@ -74,8 +84,8 @@ class RConfig(dict):
         return result
 
     @staticmethod
-    def _transfer_str_yaml_to_rconfig(str_yaml):
-        # type: (str) -> RConfig
+    def _transfer_str_yaml_to_rconfig(
+            str_yaml: str) -> RConfig:
         """
         transfers yaml based string to RConfig
         :param str_yaml: yaml based string
