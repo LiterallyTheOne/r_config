@@ -35,6 +35,12 @@ class RConfig(dict):
             self,
             key: str,
             value: Any):
+        """
+        Sets an attribute with the given key and value
+
+        :param key: name of the attribute
+        :param value: value of that attribute
+        """
 
         if isinstance(value, (list, tuple)):
             value = [self.__class__(x) if isinstance(x, dict) else x for x in value]
