@@ -13,5 +13,6 @@ setup(
     url="https://github.com/RaminZarebidoky/r_config",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    install_requires=['pyyaml']
+    install_requires=['pyyaml'],
+    python_requires='>3.9.0'
 )
