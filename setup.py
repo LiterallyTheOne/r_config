@@ -1,6 +1,6 @@
 from setuptools import setup
 
-with open('README.md', 'r') as f:
+with open('ReadMe.rst', 'r') as f:
     long_description = f.read()
 
 setup(
@@ -9,10 +9,10 @@ setup(
     packages=['r_config'],
     author="Ramin Zarebidoky",
     author_email="ramin.zarebidoky@gmail.com",
-    description="a customized way to use config",
-    url="https://github.com/RaminZarebidoky/r_config",
+    description="A customized way to use config",
+    url="https://github.com/LiterallyTheOne/r_config",
     long_description=long_description,
-    long_description_content_type="text/markdown",
+    long_description_content_type="text/x-rst",
     install_requires=['pyyaml'],
     python_requires='>3.9.0'
 )
