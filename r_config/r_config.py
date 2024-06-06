@@ -2,7 +2,7 @@ from __future__ import annotations
 import yaml
 from pathlib import Path
 
-from typing import Any, Self
+from typing import Any
 
 
 class RConfig(dict):
@@ -16,7 +16,7 @@ class RConfig(dict):
 
     def update(
             self,
-            r: Self | dict = None,
+            r: RConfig | dict = None,
             **kwargs: dict[str, any]) -> None:
 
         d = {}
