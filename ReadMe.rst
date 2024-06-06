@@ -4,6 +4,7 @@ RConfig
 A customized way to use config
 
 `Documentation <https://r-config.readthedocs.io/en/latest/>`_
+
 `PyPi <https://pypi.org/project/r-config/>`_
 
 Usage
